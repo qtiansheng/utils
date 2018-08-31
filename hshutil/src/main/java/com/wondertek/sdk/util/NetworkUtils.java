@@ -29,10 +29,15 @@ public class NetworkUtils {
      * @param context 全局context
      * @return true 已连接 false 未连接
      */
-    public static Boolean checkNetworkConnect(Context context) {
+    public static Boolean isNetAvailable(Context context) {
         if (context != null) {
             ConnectivityManager mConnectivityManager = (ConnectivityManager) context
                     .getSystemService(Context.CONNECTIVITY_SERVICE);
+
+            if (mConnectivityManager == null) {
+                return false;
+            }
+
             NetworkInfo mNetworkInfo = mConnectivityManager.getActiveNetworkInfo();
             if (mNetworkInfo != null) {
                 return mNetworkInfo.isAvailable();
@@ -52,6 +57,9 @@ public class NetworkUtils {
         if (context != null) {
             ConnectivityManager mConnectivityManager = (ConnectivityManager) context
                     .getSystemService(Context.CONNECTIVITY_SERVICE);
+            if (mConnectivityManager == null) {
+                return false;
+            }
             NetworkInfo mWiFiNetworkInfo = mConnectivityManager.getActiveNetworkInfo();
             return mWiFiNetworkInfo.getType() == ConnectivityManager.TYPE_WIFI;
         }
@@ -67,6 +75,9 @@ public class NetworkUtils {
         if (context != null) {
             ConnectivityManager mConnectivityManager = (ConnectivityManager)context
                     .getSystemService(Context.CONNECTIVITY_SERVICE);
+            if (mConnectivityManager == null) {
+                return false;
+            }
             NetworkInfo mWiFiNetworkInfo = mConnectivityManager
                     .getNetworkInfo(ConnectivityManager.TYPE_WIFI);
             if (mWiFiNetworkInfo != null) {
