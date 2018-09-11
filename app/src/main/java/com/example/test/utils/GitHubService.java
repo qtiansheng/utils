@@ -27,4 +27,5 @@ public interface GitHubService {
 
     @POST("batchCheck")
     Observable<ResponseBody> signNew_isSign(@Body Map<String, Object> options);
+
 }

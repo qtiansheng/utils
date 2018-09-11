@@ -1,6 +1,8 @@
 package com.example.test.utils;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +14,8 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 
 import com.wondertek.sdk.util.LogUtils;
+
+import net.wequick.small.Small;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -54,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         LogUtils.d("retrofit ="  );
+//        startActivity(this,);
 
         Map<String, Object> inMap = new HashMap<String, Object>();
         inMap.put("token", "");
@@ -105,6 +110,13 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
+
+
+        String test = "http://code.wequick.net/small-sample/main";
+
+
+//        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(test));
+//        startActivity(intent);
     }
 
     @Override
@@ -124,6 +136,14 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             LogUtils.d("click action_settings");
+
+            Small.setUp(this, new Small.OnCompleteListener() {
+                @Override
+                public void onComplete() {
+                    Small.openUri("main", MainActivity.this);
+                }
+            });
+
             return true;
         }
 

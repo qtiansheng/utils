@@ -1,0 +1,7 @@
+int drawable ic_launcher_foreground 0x79020000
+int layout activity_main 0x79030000
+int style AppTheme 0x79040000
+int color colorAccent 0x79050000
+int color colorPrimary 0x79050001
+int color colorPrimaryDark 0x79050002
+int id basic 0x79060000

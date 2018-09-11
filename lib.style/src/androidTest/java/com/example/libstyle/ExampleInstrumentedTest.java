@@ -1,4 +1,4 @@
-package com.example.li_pc.utils;
+package com.example.libstyle;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.li_pc.utils", appContext.getPackageName());
+        assertEquals("com.example.libstyle", appContext.getPackageName());
     }
 }

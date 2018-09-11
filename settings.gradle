@@ -1,1 +1,1 @@
-include ':app', ':hshutil'
+include ':app', ':hshutil', ':app.main', ':lib.style'
